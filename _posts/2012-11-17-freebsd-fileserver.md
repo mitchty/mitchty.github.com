@@ -3,7 +3,7 @@ layout: post
 title: "Lets make a fileserver"
 description: ""
 category: fileserver
-tags: [freebsd zfs nas]
+tags: [freebsd, zfs, nas]
 ---
 {% include JB/setup %}
 
@@ -45,7 +45,7 @@ Boot off the FreeBSD install media and select Live CD.
 
 <img src="../../../../../images/2012-11-17-freebsd-fileserver-image01.png" />
 
-Note to mount up an fat32 filesystem in FreeBSD do this:
+Note to mount up a fat32 filesystem in FreeBSD do this:
 
         mkdir /tmp/usb; mount -t msdosfs -o large /dev/daNpN /tmp/usb
 
@@ -53,7 +53,7 @@ Assuming you've modified the script to your liking, kick things off and you're r
 
        /bin/sh -x /tmp/usb/freebsd9-zfs-install.sh
 
-Once its finished reboot, add a user, and finally give root a password. Feel fre to admire the new shiny install before the new car smell wears off. I'll cover more of the setup in later posts.
+Once its finished reboot, add a user, and finally give root a password. Feel free to admire the new shiny install before the new car smell wears off. I'll cover more of the setup in later posts.
 
 ## Notes on 4k sector drives
 
