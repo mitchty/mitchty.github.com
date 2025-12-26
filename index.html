@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mitchty</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #bevy-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    #loading {
+      color: white;
+      font-family: monospace;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="bevy-container">
+    <div id="loading">Loading mitchty...</div>
+  </div>
+
+  <script type="module">
+    import init from './wasm/mitchty.js';
+
+    async function run() {
+      try {
+        await init();
+        document.getElementById('loading').style.display = 'none';
+      } catch (e) {
+        document.getElementById('loading').innerText = 'Error loading app: ' + e;
+        console.error(e);
+      }
+    }
+
+    run();
+  </script>
+</body>
+</html>

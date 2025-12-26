@@ -1,0 +1,32 @@
+[package]
+name = "mitchty"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "mitchty"
+path = "src/main.rs"
+
+[dependencies]
+bevy = { version = "0.17.3", default-features = false, features = [
+  "bevy_winit",
+  "bevy_render",
+  "bevy_core_pipeline",
+  "bevy_sprite",
+  "bevy_text",
+  "bevy_ui",
+  "x11",
+  "wayland",
+] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+bevy = { version = "0.17.3", default-features = false, features = [
+  "bevy_winit",
+  "bevy_render",
+  "bevy_core_pipeline",
+  "bevy_sprite",
+  "bevy_text",
+  "bevy_ui",
+  "webgl2",
+] }
